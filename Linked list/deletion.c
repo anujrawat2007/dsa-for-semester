@@ -9,6 +9,12 @@ struct node
 
 struct node *deletionAtfirst(struct node *head)
 {
+    if (head==NULL)
+    {
+        printf("No data exists");
+        return head;
+    }
+    
     struct node *ptr;
     ptr = head;
     head = head->next;
@@ -18,6 +24,17 @@ struct node *deletionAtfirst(struct node *head)
 
 struct node *deletionAtIndex(struct node *head, int index)
 {
+    if (head==NULL)
+    {
+        printf("No data exists ");
+        return head;
+    }
+    if (index==0)
+    {
+        return deletionAtfist(head);
+    }
+    
+    
     struct node *p;
     struct node *q;
     p = head;
@@ -38,7 +55,7 @@ struct node *deletionAtEnd(struct node *head)
 {
     if (head==NULL)
     {
-        return NULL;
+        return head;
     }
      
     struct node *p = head;
@@ -54,6 +71,12 @@ struct node *deletionAtEnd(struct node *head)
 }
 
 struct node * deletionAtValue(struct node *head,int value){
+    if (head==NULL)
+    {
+        printf("No data exits");
+        return head;
+    }
+    
     struct node *p= head;
     struct node *q=p->next;
     while (q->data!=value && q->next!=NULL)
